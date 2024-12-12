@@ -1,4 +1,4 @@
-package erp;
+package jma;
 
 public class ContadorCompartido {
     private int contador = 0;

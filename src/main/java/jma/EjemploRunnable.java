@@ -1,8 +1,8 @@
-package erp;
+package jma;
 
-public class EjemploHilos extends Thread{
+public class EjemploRunnable implements Runnable{
     private String nombre;
-    public EjemploHilos(String nombre) {
+    public EjemploRunnable(String nombre) {
         this.nombre = nombre;
     }
     @Override
@@ -17,9 +17,10 @@ public class EjemploHilos extends Thread{
         }
     }
     public static void main(String[] args) {
-        EjemploHilos hilo1 = new EjemploHilos("Hilo 1");
-        EjemploHilos hilo2 = new EjemploHilos("Hilo 2");
+        Thread hilo1 = new Thread(new EjemploRunnable("Hilo 1"));
+        Thread hilo2 = new Thread(new EjemploRunnable("Hilo 2"));
         hilo1.start();
         hilo2.start();
     }
+
 }
